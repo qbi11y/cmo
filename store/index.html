@@ -1,0 +1,56 @@
+<html ng-app="cmo">
+<title>cloudMatrix One</title>
+    <link rel="stylesheet" href="../../packages/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/stylesheets/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</html>
+<body>
+    <script type="text/javascript" src="../../packages/angular/angular.min.js"></script>
+    
+    <!-- navigation bar -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div ng-include="'../templates/nav-bar.html'"></div>
+        </div>
+    </div>
+
+    <div class="row" ng-controller="ProductController as products" ng-show="products.addToCart">
+        <div class="col-sm-12">
+            <div class="alert alert-success alert-dismissible fade in" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button><i class="fa fa-check"></i><span>The service was successfully edited.</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row scorecard">
+        <div class="col-sm-12">
+            <div class="text-right"><h1>10,456</h1></div>
+        </div>
+    </div>
+    
+    <!-- search field -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div ng-include="'../templates/search.html'"></div>
+        </div>
+    </div>
+
+    <div class="row" ng-controller="ProductController as products">
+        <div class="col-sm-12">
+            <div class="product" ng-repeat="product in products.products">
+                <div class="list list-image">
+                    <div>{{ product.thumbnail }}</div>
+                    <div>Points: {{ product.points | number }}</div>
+                </div>
+                <div class="list list-text">
+                    <div>{{ product.name }}</div>
+                    <div><a href="details.html">{{ product.description }}</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="../../packages/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../../packages/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/scripts.js"></script>
+</body>

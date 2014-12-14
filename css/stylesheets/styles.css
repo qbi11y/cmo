@@ -1,0 +1,68 @@
+/* line 1, ../sass/styles.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 5, ../sass/styles.scss */
+.product {
+  border-bottom: 1px dotted gray;
+  width: 100%;
+  padding: 1em;
+}
+
+/* line 11, ../sass/styles.scss */
+.grid {
+  display: inline-block;
+}
+
+/* line 15, ../sass/styles.scss */
+.list {
+  display: inline-block;
+}
+
+/* line 19, ../sass/styles.scss */
+.list-image {
+  width: 30%;
+  height: 100px;
+  background-color: green;
+  vertical-align: top;
+}
+
+/* line 26, ../sass/styles.scss */
+.list-text {
+  width: 65%;
+}
+
+/* line 30, ../sass/styles.scss */
+.scorecard {
+  background-color: gray;
+}
+
+/* line 34, ../sass/styles.scss */
+.scorecard h1 {
+  font-size: 3em;
+  color: white;
+}
+
+/* line 43, ../sass/styles.scss */
+.summary-category {
+  margin-bottom: 2em;
+}
+
+/* line 47, ../sass/styles.scss */
+.summary-category h2 {
+  border-bottom: 1px solid gray;
+  padding-bottom: .5em;
+}
+
+/* line 52, ../sass/styles.scss */
+.list-item {
+  border-bottom: 1px dotted gray;
+  padding: 1em 0;
+}
+
+/* line 57, ../sass/styles.scss */
+.outlier {
+  border-bottom: 1px dashed gray;
+  padding: 3em 1.8em;
+}

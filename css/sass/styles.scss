@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+.product {
+    border-bottom: 1px dotted gray;
+    width: 100%;
+    padding: 1em;
+}
+
+.grid {
+    display: inline-block;
+}
+
+.list {
+    display: inline-block;
+}
+
+.list-image {
+    width: 30%;
+    height: 100px;
+    background-color: green;
+    vertical-align: top;
+}
+
+.list-text {
+    width: 65%;
+}
+
+.scorecard {
+    background-color: gray;
+}
+
+.scorecard h1 {
+    font-size: 3em;
+    color: white;
+}
+
+.spec-grid {
+
+}
+
+.summary-category {
+    margin-bottom: 2em;
+}
+
+.summary-category h2 {
+    border-bottom: 1px solid gray;
+    padding-bottom: .5em;
+}
+
+.list-item {
+    border-bottom: 1px dotted gray;
+    padding: 1em 0;
+}
+
+.outlier {
+    border-bottom: 1px dashed gray;
+    padding: 3em 1.8em;
+}
