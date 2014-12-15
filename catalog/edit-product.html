@@ -1,0 +1,118 @@
+<html ng-app="cmo">
+<title>cloudMatrix One</title>
+    <link rel="stylesheet" href="../../packages/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/stylesheets/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</html>
+<body>
+    <script type="text/javascript" src="../../packages/angular/angular.min.js"></script>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div ng-include="'../templates/nav-bar.html'"></div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-12">
+            <a href="index.html">back</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <form role="form">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Provider</label>
+                <select class="form-control">
+                  <option>Select Provider</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Cloud Instance</label>
+                <select multiple class="form-control">
+                  <option>Select Cloud Instance</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Offering Type</label>
+                <select class="form-control">
+                  <option>Offering Type</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Service Type</label>
+                <select class="form-control">
+                  <option>Service Type</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Service ID</label>
+                Service-Prefix <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter service ID">
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Service Name</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter service name">
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Provisioning Metadata Helper Class</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter provisioning metadata helper class">
+              </div>
+
+              <select multiple class="form-control">
+                  <option>Select Service Category</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Description</label>
+                <textarea class="form-control" rows="5"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Additional Information</label>
+                <textarea class="form-control" rows="5"></textarea>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Enabled
+                </label>
+              </div>
+
+              <div class="row">
+                  <div class="col-sm-12">
+                    <a href="index.html" class="btn btn-primary btn-block">Save</a>
+                    </div>
+              </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../packages/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../../packages/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/catalog-scripts.js"></script>
+</body>
