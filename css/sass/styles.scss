@@ -2,10 +2,15 @@
     box-sizing: border-box;
 }
 
+.grav-input {
+    height: 2em;
+    font-size: 1.5em;
+}
+
 .product {
     border-bottom: 1px dotted gray;
     width: 100%;
-    padding: 1em;
+    padding: 1.5em 1em;
 }
 
 .grid {
@@ -17,17 +22,26 @@
 }
 
 .list-image {
-    width: 30%;
-    height: 100px;
+    /*width: 30%;*/
+    height: 75px;
     vertical-align: top;
 }
 
+.list-image img {
+    width: 150px;
+}
+
+.list-image .image {
+    height: 50px;
+}
+
 .list-text {
-    width: 65%;
+    /*width: 65%;*/
 }
 
 .scorecard {
     background-color: gray;
+    margin-bottom: 1em;
 }
 
 .scorecard h1 {
@@ -37,10 +51,6 @@
 
 .spec-grid {
 
-}
-
-.summary-category {
-    margin-bottom: 2em;
 }
 
 .summary-category h2 {
@@ -57,3 +67,124 @@
     border-bottom: 1px dashed gray;
     padding: 3em 1.8em;
 }
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.list-item-sub {
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 24px;
+}
+
+/* store details page */
+#detail-icon img {
+    width: 150px;
+}
+
+.detail-title {
+    font-weight: lighter;
+}
+
+.spec-category {
+    font-size: 1.5em;
+}
+
+.specs {
+    margin-bottom: 2em;
+}
+
+/*summary page*/
+.simple-list {
+    border-bottom: 1px dotted gray;
+    padding: 2em;
+}
+
+.simple-list img {
+    width: 150px;
+}
+
+.summary-category {
+    margin-bottom: 5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
