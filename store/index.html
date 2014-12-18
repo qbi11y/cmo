@@ -5,62 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </html>
 <body ng-controller="ProductController as products">
-    <script type="text/javascript" src="../../packages/angular/angular.min.js"></script>
-    
-    <!-- navigation bar -->
+    <script type="text/javascript" src="../../packages/angular/angular.min.js"></script> <!-- main angular file -->
+    <script src="../../packages/angular-route/angular-route.js"></script><!-- angular route module -->
+    <script type="text/javascript" src="../js/controllers.js"></script><!-- custom angular controllers -->
     <div class="row">
         <div class="col-sm-12">
             <div ng-include="'../templates/nav-bar.html'"></div>
         </div>
     </div>
-
-    <div class="container-fluid">
-        <div class="row" ng-show="products.addToCart">
-            <div class="col-sm-12">
-                <div class="alert alert-success alert-dismissible fade in" role="alert">
-                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button><i class="fa fa-check"></i><span>The service was successfully edited.</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="row scorecard">
-            <div class="col-sm-12">
-                <div class="text-right">
-                    <div>Reward Points</div>
-                    <h1>10,456</h1>
-                    <div>Ranked <strong>5</strong> of 3,245</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- search field -->
-        <div class="row">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div ng-include="'../templates/search.html'"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="product" ng-repeat="product in products.products | filter:searchText">
-                    <div class="list-image">
-                        <div class="col-xs-6 image text-left"><img ng-src="{{ product.thumbnail }}"></div>
-                        <div class="col-xs-6 text-right">
-                            <div>starting at</div>
-                            <div class="list-item-sub">{{ product.price | currency}}</div>
-                        </div>
-                    </div>
-                    <div class="list-text">
-                        <div class="list-item-sub">{{ product.name }}</div>
-                        <div><strong>Points:</strong> {{ product.points | number }}</div>
-                        <div><a href="details.html">{{ product.shortDescription }}</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
+    <!-- All of the views for the store are loaded into this div -->
+    <div ng-view></div>    
     
     <script type="text/javascript" src="../../packages/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="../../packages/bootstrap/dist/js/bootstrap.min.js"></script>
