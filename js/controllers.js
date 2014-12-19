@@ -1,36 +1,35 @@
 var cmoControllers = angular.module('cmoControllers', []);
 
 cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarProducts', function($scope, Products, SimilarProducts) {
+    $scope.menuStore = true;
     this.products = Products;
     this.similarProducts = SimilarProducts;
     this.addToCart = false;
 }]);
 
-cmoControllers.factory('ManageViews', function(){
-    var showResources = true;
-    var showApplications = false;
-
-    var showTab = function() {
-        showResources = 'i am progressing';
-        return showResources
-    }
-    return 'this is my service'
-})
-
 cmoControllers.controller('ManageController', ['$scope', 'ManageViews', function($scope, ManageViews){
-    $scope.test = 'coming from message controller';
-
+    $scope.menuManage = true;
+    $scope.tabToShow = ManageViews.getTab();
     $scope.showDetails = function(tab) {
-        if ( tab == 'resources' ) {
-            $scope.showResources = true;
-            $scope.showApplications = false;
-            console.log('showApplications - ' + $scope.showApplications, 'showResources - ' + $scope.showResources );
-        } else {
-            $scope.showResources = false;
-            $scope.showApplications = true;
-            console.log('showApplications - ' + $scope.showApplications, 'showResources - ' + $scope.showResources );
+        ManageViews.setTab(tab)
+        $scope.tabToShow = ManageViews.getTab();
+        console.log($scope.tabToShow);
+    }
+}]);
+
+cmoControllers.controller('CatalogController', ['$scope', 'Products', function($scope, Products) {
+    $scope.items = Products;
+    $scope.menuCatalog = true;
+}]);
+
+cmoControllers.factory('ManageViews', function(){
+    var tabToShow = 'resources';
+    return {
+        getTab: function() {
+            return tabToShow
+        },
+        setTab: function(tab) {
+            tabToShow = tab;
         }
     }
-
-    console.log(ManageViews.showTab());
-}])
+})

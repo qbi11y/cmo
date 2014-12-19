@@ -1,4 +1,4 @@
-var app = angular.module('cmo', ['ngRoute', 'cmoControllers']);
+var app = angular.module('Data', []);
 
 //holds the similar products
 app.factory('SimilarProducts', function() {
@@ -116,28 +116,3 @@ app.factory('Products', function() {
     }]
     return products
 });
-
-app.config(['$routeProvider', 
-    function($routeProvider) {
-    $routeProvider.when('/', {
-        templateUrl: 'main.html',
-        controller: 'ProductController'
-    }).when('/details', {
-        templateUrl: 'details.html',
-        controller: 'ProductController'
-    }).when('/configure', {
-        templateUrl: 'configure.html',
-        controller: 'ProductController'
-    }).when('/summary', {
-        templateUrl: 'summary.html',
-        controller: 'ProductController'
-    });
-}]);
-
-/*
-app.controller('ProductController', ['$scope', 'Products', 'SimilarProducts', function($scope, Products, SimilarProducts) {
-    this.products = Products;
-    this.similarProducts = SimilarProducts;
-    this.addToCart = false;
-}]);
-*/
