@@ -137,4 +137,16 @@
   .phone-disabled {
     display: block;
   }
+
+  /* line 121, ../sass/styles.scss */
+  .compare {
+    display: inline-block;
+  }
+
+  /* line 125, ../sass/styles.scss */
+  .compare-item {
+    width: 60px;
+    height: 60px;
+    background-color: gray;
+  }
 }

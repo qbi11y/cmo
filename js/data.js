@@ -30,6 +30,7 @@ app.factory('SimilarProducts', function() {
 app.factory('Products', function() {
     var products = [
     {
+        id: 1,
         name: 'Amazon Web Services',
         description: 'Lorem ipsum dolor sit amet, sea id molestie eleifend moderatius, ubique mandamus nec ex. Pro error mentitum ad, pri sonet facilisis voluptatum in, pri voluptua partiendo intellegebat eu.',
         shortDescription: 'Lorem ipsum dolor sit amet, sea id molestie eleifend moderatius, ubique mandamus nec ex.',
@@ -83,6 +84,7 @@ app.factory('Products', function() {
         }]
     },
     {
+        id: 2,
         name: 'Azure',
         description: 'Lorem ipsum dolor sit amet, sea id molestie eleifend moderatius, ubique mandamus nec ex. Pro error mentitum ad, pri sonet facilisis voluptatum in, pri voluptua partiendo intellegebat eu.',
         shortDescription: 'Lorem ipsum dolor sit amet, sea id molestie eleifend moderatius, ubique mandamus nec ex.',
@@ -91,6 +93,7 @@ app.factory('Products', function() {
         points: 1250
     },
     {
+        id: 3,
         name: 'OpenStack',
         description: 'Lorem ipsum dolor sit amet, sea id molestie eleifend moderatius, ubique mandamus nec ex. Pro error mentitum ad, pri sonet facilisis voluptatum in, pri voluptua partiendo intellegebat eu.',
         shortDescription: 'Lorem ipsum dolor sit amet, sea id molestie eleifend moderatius, ubique mandamus nec ex.',
@@ -99,6 +102,7 @@ app.factory('Products', function() {
         points: 1000
     },
     {
+        id: 4,
         name: 'HP',
         description: 'Lorem ipsum dolor sit amet, sea id molestie eleifend moderatius, ubique mandamus nec ex. Pro error mentitum ad, pri sonet facilisis voluptatum in, pri voluptua partiendo intellegebat eu.',
         shortDescription: 'Lorem ipsum dolor sit amet, sea id molestie eleifend moderatius, ubique mandamus nec ex.',
@@ -107,6 +111,7 @@ app.factory('Products', function() {
         points: 1100
     },
     {
+        id: 5,
         name: 'Google',
         description: 'Lorem ipsum dolor sit amet, sea id molestie eleifend moderatius, ubique mandamus nec ex. Pro error mentitum ad, pri sonet facilisis voluptatum in, pri voluptua partiendo intellegebat eu.',
         shortDescription: 'Lorem ipsum dolor sit amet, sea id molestie eleifend moderatius, ubique mandamus nec ex.',

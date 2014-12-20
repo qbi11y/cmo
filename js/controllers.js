@@ -1,10 +1,23 @@
 var cmoControllers = angular.module('cmoControllers', []);
 
-cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarProducts', function($scope, Products, SimilarProducts) {
+cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarProducts', 'ManageResponses', function($scope, Products, SimilarProducts, ManageResponses) {
     $scope.menuStore = true;
     this.products = Products;
     this.similarProducts = SimilarProducts;
-    this.addToCart = false;
+    $scope.cartResponse = ManageResponses.getResponse();
+    $scope.compare = 'something';
+    $scope.setCompare = function(item) {
+        //$scope.compare = $event;
+        console.log(item);
+    }
+    
+    $scope.addToCart = function() {
+        //add to cart
+        //on success set response;
+        ManageResponses.setResponse('cart', Math.round(Math.random()));
+        $scope.cartResponse = ManageResponses.getResponse();
+        window.scroll(0, 0);
+    }
 }]);
 
 cmoControllers.controller('ManageController', ['$scope', 'ManageViews', function($scope, ManageViews){
@@ -32,4 +45,19 @@ cmoControllers.factory('ManageViews', function(){
             tabToShow = tab;
         }
     }
+});
+
+cmoControllers.factory('ManageResponses', function() {
+    var addToCartResponse;
+    console.log(addToCartResponse);
+    return {
+        getResponse: function() {
+            return addToCartResponse
+        },
+        setResponse: function(action, response) {
+            addToCartResponse = response;
+        }
+    }
 })
+
+
