@@ -23,5 +23,8 @@ app.config(['$routeProvider',
     }).when('/summary', {
         templateUrl: 'summary.html',
         controller: 'ProductController'
+    }).when('/compare', {
+        templateUrl: 'compare.html',
+        controller: 'ProductController'
     });
 }]);

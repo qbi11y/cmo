@@ -144,9 +144,8 @@
   }
 
   /* line 125, ../sass/styles.scss */
-  .compare-item {
-    width: 60px;
-    height: 60px;
+  img.compare-item {
+    width: 100px;
     background-color: gray;
   }
 }

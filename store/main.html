@@ -31,11 +31,12 @@
         </div>
 
 
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="compare compare-item phone-disabled">{{ compare }}</div>
-            <div class="compare compare-item phone-disabled">compare 2</div>
-            <div class="compare compare-item phone-disabled">compare 3</div>
+    <div class="row phone-disabled">
+        <div class="col-sm-1">
+            <a href="#compare">Compare</a>
+        </div>
+        <div class="col-sm-11">
+            <div class="compare" ng-repeat="item in compare"><img class="compare-item" ng-src="{{ item.thumbnail }}"></div>-
         </div>
     </div>
 
@@ -56,7 +57,7 @@
                     <div><a href="#details" >{{ product.shortDescription }}</a></div><!-- short description -->
                     <div class="checkbox phone-disabled">
                         <label>
-                            <input type="checkbox" ng-model="checkbox" ng-change="setCompare(checkbox)" checkbox>Compare
+                            <input type="checkbox" ng-model="checkbox" ng-change="setCompare(product, checkbox)">Compare
                         </label>
                     </div><!-- compare-->
                 </div>

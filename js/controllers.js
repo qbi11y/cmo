@@ -1,14 +1,28 @@
 var cmoControllers = angular.module('cmoControllers', []);
 
-cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarProducts', 'ManageResponses', function($scope, Products, SimilarProducts, ManageResponses) {
+cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarProducts', 'ManageResponses', 'CompareItems', function($scope, Products, SimilarProducts, ManageResponses, CompareItems) {
     $scope.menuStore = true;
     this.products = Products;
     this.similarProducts = SimilarProducts;
     $scope.cartResponse = ManageResponses.getResponse();
-    $scope.compare = 'something';
-    $scope.setCompare = function(item) {
-        //$scope.compare = $event;
-        console.log(item);
+    $scope.compare = CompareItems.getCompareItems();
+    $scope.setCompare = function(item, checked) {
+        if (checked == true) {
+            $scope.compare.push(item);    
+        } else {
+            $scope.removeCompare(item)
+            //console.log('remove item')
+        }
+        CompareItems.setCompareItems($scope.compare);
+    }
+
+    $scope.removeCompare = function(item) {
+        console.log(item.id);
+        for (i=0; i < $scope.compare.length; i++) {
+            if (item.id == $scope.compare[i].id) {
+                $scope.compare.splice(i, 1);
+            }
+        }
     }
     
     $scope.addToCart = function() {
@@ -56,6 +70,18 @@ cmoControllers.factory('ManageResponses', function() {
         },
         setResponse: function(action, response) {
             addToCartResponse = response;
+        }
+    }
+});
+
+cmoControllers.factory('CompareItems', function() {
+    var compareItems = [];
+    return {
+        getCompareItems: function() {
+            return compareItems;
+        },
+        setCompareItems: function(items) {
+            compareItems = items;
         }
     }
 })
