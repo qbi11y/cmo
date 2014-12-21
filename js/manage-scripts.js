@@ -1,4 +1,4 @@
-var app = angular.module('CMO', ['ngRoute', 'cmoControllers']);
+var app = angular.module('CMO', ['ngRoute', 'cmoControllers', 'Data']);
 
 app.config(['$routeProvider', 
     function($routeProvider) {

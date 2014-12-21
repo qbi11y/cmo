@@ -148,4 +148,9 @@
     width: 100px;
     background-color: gray;
   }
+
+  /* line 130, ../sass/styles.scss */
+  .detail-compare-logo {
+    width: 200px;
+  }
 }

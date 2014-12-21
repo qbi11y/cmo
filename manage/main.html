@@ -25,50 +25,24 @@
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="resources">
                         
-                        <div class="col-xs-12 outlier">
-                            <div class="col-xs-6"><a href="#details" ng-click="showDetails('resources')">Computer</a></div>
-                            <div class="col-xs-6 text-right">Data Point</div>
+                        <div class="col-xs-12 outlier" ng-repeat="resource in resources">
+                            <div class="col-xs-6"><a href="#details" ng-click="showDetails('resources')">{{ resource.name }}</a></div>
+                            <div class="col-xs-6 text-right">
+                                <span ng-repeat="spec in resource.data">{{ spec }}</span>
+                            </div>
                         </div>
-
-                        <div class="col-xs-12 outlier">
-                            <div class="col-xs-6"><a href="#details">Memory</a></div>
-                            <div class="col-xs-6 text-right">Data Point</div>
-                        </div>
-
-                        <div class="col-xs-12 outlier">
-                            <div class="col-xs-6"><a href="#details">Network</a></div>
-                            <div class="col-xs-6 text-right">Data Point</div>
-                        </div>
-
-                        <div class="col-xs-12 outlier">
-                            <div class="col-xs-6"><a href="#details">Storage</a></div>
-                            <div class="col-xs-6 text-right">Data Point</div>
-                        </div>
-
-                        <div class="col-xs-12 outlier">
-                            <div class="col-xs-6"><a href="#details">Managed Services</a></div>
-                            <div class="col-xs-6 text-right">Data Point</div>
-                        </div>
-
                     </div><!--// .tabpanel -->
                     
 
                     <div role="tabpanel" class="tab-pane" id="applications">
                         
-                        <div class="col-xs-12 outlier">
-                                <div class="col-xs-6"><a href="#details">Application 1</a></div>
-                                <div class="col-xs-6 text-right">Data Point</div>
+                        <div class="col-xs-12 outlier" ng-repeat="application in applications">
+                            <div class="col-xs-6"><a href="#details">{{ application.name }}</a></div>
+                            <div class="col-xs-6 text-right">
+                                <div class="col-xs-6">{{ application.cost.monthToDate | currency }}</div>
+                                <div class="col-xs-6">{{ application.cost.yearToDate | currency }}</div>
                             </div>
-
-                            <div class="col-xs-12 outlier">
-                                <div class="col-xs-6"><a href="#details">Application 2</a></div>
-                                <div class="col-xs-6 text-right">Data Point</div>
-                            </div>
-
-                            <div class="col-xs-12 outlier">
-                                <div class="col-xs-6"><a href="#details">Application 3</a></div>
-                                <div class="col-xs-6 text-right">Data Point</div>
-                            </div>
+                        </div>
 
                     </div><!--// .tabpanel -->
                 </div><!--// .tab-content -->

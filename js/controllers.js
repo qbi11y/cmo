@@ -1,5 +1,4 @@
 var cmoControllers = angular.module('cmoControllers', []);
-
 cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarProducts', 'ManageResponses', 'CompareItems', function($scope, Products, SimilarProducts, ManageResponses, CompareItems) {
     $scope.menuStore = true;
     this.products = Products;
@@ -34,9 +33,12 @@ cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarPr
     }
 }]);
 
-cmoControllers.controller('ManageController', ['$scope', 'ManageViews', function($scope, ManageViews){
+cmoControllers.controller('ManageController', ['$scope', 'ManageViews', 'Applications', 'Resources', function($scope, ManageViews, Applications, Resources){
     $scope.menuManage = true;
     $scope.tabToShow = ManageViews.getTab();
+    $scope.applications = Applications;
+    $scope.resources = Resources;
+    console.log(Resources);
     $scope.showDetails = function(tab) {
         ManageViews.setTab(tab)
         $scope.tabToShow = ManageViews.getTab();
@@ -47,6 +49,10 @@ cmoControllers.controller('ManageController', ['$scope', 'ManageViews', function
 cmoControllers.controller('CatalogController', ['$scope', 'Products', function($scope, Products) {
     $scope.items = Products;
     $scope.menuCatalog = true;
+
+    $scope.rowClick = function() {
+        console.log('enter the row')
+    }
 }]);
 
 cmoControllers.factory('ManageViews', function(){
@@ -84,6 +90,7 @@ cmoControllers.factory('CompareItems', function() {
             compareItems = items;
         }
     }
-})
+});
+
 
 

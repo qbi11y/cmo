@@ -1,14 +1,5 @@
 var app = angular.module('CMO', ['ngRoute', 'cmoControllers', 'Data']);
 
-cmoControllers.directive('checkbox', function() {
-    return {
-        restrict: 'A',
-        link: function(scope, element, attributes) {
-            console.log(element.parent().parent().parent().parent(), scope.compare);
-        }
-    }
-})
-
 app.config(['$routeProvider', 
     function($routeProvider) {
     $routeProvider.when('/', {
