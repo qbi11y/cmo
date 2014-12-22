@@ -40,10 +40,23 @@
         </div>
     </div>
 
+    <div class="row phone-disabled">
+        <div class="col-sm-12">
+            <button ng-click="switchView('grid')" type="button" class="btn btn-default" aria-label="Left Align">
+              <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+            </button>
+
+            <button ng-click="switchView('list')" type="button" class="btn btn-default" aria-label="Left Align">
+              <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+    
+
     <!-- list of all products -->
     <div class="row">
         <div class="col-sm-12">
-            <div class="product" ng-repeat="product in products | filter:searchText" id="{{ product.id }}">
+            <div class="product" ng-class="{grid: selectedView == 'grid'}" ng-repeat="product in products | filter:searchText" id="{{ product.id }}">
                 <div class="list-image">
                     <div class="col-xs-6 image text-left"><img ng-model="checkbox" ng-src="{{ product.thumbnail }}"></div>
                     <div class="col-xs-6 text-right">

@@ -5,6 +5,7 @@ cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarPr
     this.similarProducts = SimilarProducts;
     $scope.cartResponse = ManageResponses.getResponse('addToCart');
     $scope.compare = CompareItems.getCompareItems();
+    $scope.selectedView = 'list';
     $scope.setCompare = function (item, checked) {
         if (checked == true) {
             $scope.compare.push(item);
@@ -15,8 +16,12 @@ cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarPr
         CompareItems.setCompareItems($scope.compare);
     }
 
+    $scope.switchView = function (view) {
+        $scope.selectedView = view;
+        //console.log(view);
+    }
+
     $scope.removeCompare = function (item) {
-        console.log(item.id);
         for (i = 0; i < $scope.compare.length; i++) {
             if (item.id == $scope.compare[i].id) {
                 $scope.compare.splice(i, 1);
@@ -38,11 +43,9 @@ cmoControllers.controller('ManageController', ['$scope', 'ManageViews', 'Applica
     $scope.tabToShow = ManageViews.getTab();
     $scope.applications = Applications;
     $scope.resources = Resources;
-    console.log(Resources);
     $scope.showDetails = function (tab) {
         ManageViews.setTab(tab)
         $scope.tabToShow = ManageViews.getTab();
-        console.log($scope.tabToShow);
     };
 
     $scope.options = {
