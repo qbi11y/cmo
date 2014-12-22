@@ -1,5 +1,25 @@
 var app = angular.module('Data', []);
 
+app.factory('ProvidersList', function() {
+    var providers = [
+    {
+        id: 1,
+        name: 'Amazon',
+        thumbnail: 'http://res.cloudinary.com/gravitant/image/upload/v1413466761/providers/aws.jpg'
+    },
+    {
+        id: 2,
+        name: 'Microsoft',
+        thumbnail: 'http://res.cloudinary.com/gravitant/image/upload/v1413466762/providers/azure.png'
+    },
+    {
+        id: 3,
+        name: 'Google',
+        thumbnail: 'http://res.cloudinary.com/gravitant/image/upload/v1413466762/providers/google.png'
+    }]
+    return providers
+});
+
 //application data
 app.factory('Applications', function() {
     var applications = [
@@ -183,5 +203,19 @@ app.factory('Products', function() {
         points: 1000,
         instances: 10
     }]
-    return products
+    return {
+        getProducts: function() {
+            return products
+        },
+        setProducts: function(product) {
+            products.push(product);
+        }
+    }
+    //return products
 });
+
+
+
+
+
+

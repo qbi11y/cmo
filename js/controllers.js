@@ -1,9 +1,9 @@
 var cmoControllers = angular.module('cmoControllers', []);
 cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarProducts', 'ManageResponses', 'CompareItems', function ($scope, Products, SimilarProducts, ManageResponses, CompareItems) {
     $scope.menuStore = true;
-    this.products = Products;
+    $scope.products = Products.getProducts();
     this.similarProducts = SimilarProducts;
-    $scope.cartResponse = ManageResponses.getResponse();
+    $scope.cartResponse = ManageResponses.getResponse('addToCart');
     $scope.compare = CompareItems.getCompareItems();
     $scope.setCompare = function (item, checked) {
         if (checked == true) {
@@ -108,9 +108,23 @@ cmoControllers.controller('ManageController', ['$scope', 'ManageViews', 'Applica
 
 }]);
 
-cmoControllers.controller('CatalogController', ['$scope', 'Products', function ($scope, Products) {
-    $scope.items = Products;
+cmoControllers.controller('CatalogController', ['$scope', 'Products', 'ProvidersList', 'ManageResponses', function ($scope, Products, ProvidersList, ManageResponses) {
+    $scope.items = Products.getProducts();
     $scope.menuCatalog = true;
+    $scope.providers = ProvidersList;
+    $scope.formData = {};
+    $scope.addProductResponse = ManageResponses.getResponse('addProduct');
+
+    $scope.addService = function() {
+        for (i=0; i < $scope.providers.length; i++) {
+            if ($scope.providers[i].name == $scope.formData.provider) {
+                $scope.formData.thumbnail = $scope.providers[i].thumbnail;
+            }
+        }
+        Products.setProducts($scope.formData);
+        ManageResponses.setResponse('addProduct', Math.round(Math.random()));
+        window.scroll(0, 0);
+    }
 
     $scope.rowClick = function () {
         console.log('enter the row')
@@ -131,13 +145,32 @@ cmoControllers.factory('ManageViews', function () {
 
 cmoControllers.factory('ManageResponses', function () {
     var addToCartResponse;
+    var addProductResponse;
     console.log(addToCartResponse);
     return {
-        getResponse: function () {
-            return addToCartResponse
+        getResponse: function (action) {
+            switch (action) {
+                case 'addToCart':
+                return addToCartResponse
+                break;
+
+                case 'addProduct':
+                return addProductResponse
+                break;
+            }            
         },
         setResponse: function (action, response) {
-            addToCartResponse = response;
+            switch (action) {
+                case 'cart':
+                addToCartResponse = response;
+                break;
+
+                case 'addProduct':
+                addProductResponse = response;
+                break;
+
+            }
+            
         }
     }
 });

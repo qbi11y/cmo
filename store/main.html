@@ -43,7 +43,7 @@
     <!-- list of all products -->
     <div class="row">
         <div class="col-sm-12">
-            <div class="product" ng-repeat="product in products.products | filter:searchText" id="{{ product.id }}">
+            <div class="product" ng-repeat="product in products | filter:searchText" id="{{ product.id }}">
                 <div class="list-image">
                     <div class="col-xs-6 image text-left"><img ng-model="checkbox" ng-src="{{ product.thumbnail }}"></div>
                     <div class="col-xs-6 text-right">
