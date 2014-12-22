@@ -11,43 +11,50 @@
     </div>
 -->
 
-        <div class="row">
-            <div class="col-sm-12">
-            
-            <div role="tabpanel">
+<div class="row">
+    <div class="col-sm-12">
 
-                <!-- Nav tabs -->
-                <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#resources" aria-controls="resources" role="tab" data-toggle="tab" onclick="return false;" ng-click="showDetails('resources')">Resources</a></li>
-                    <li role="presentation"><a href="#applications" aria-controls="applications" role="tab" data-toggle="tab" onclick="return false;" ng-click="showDetails('applications')">Applications</a></li>
-                </ul>
+        <div role="tabpanel">
 
-                <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane active" id="resources">
-                        
-                        <div class="col-xs-12 outlier" ng-repeat="resource in resources">
-                            <div class="col-xs-6"><a href="#details" ng-click="showDetails('resources')">{{ resource.name }}</a></div>
-                            <div class="col-xs-6 text-right">
-                                <span ng-repeat="spec in resource.data">{{ spec }}</span>
-                            </div>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#resources" aria-controls="resources" role="tab" data-toggle="tab" onclick="return false;" ng-click="showDetails('resources')">Resources</a></li>
+                <li role="presentation"><a href="#applications" aria-controls="applications" role="tab" data-toggle="tab" onclick="return false;" ng-click="showDetails('applications')">Applications</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="resources">
+
+                    <div class="col-xs-12 outlier" ng-repeat="resource in resources">
+                        <div class="col-xs-6"><a href="#details" ng-click="showDetails('resources')">{{ resource.name }}</a></div>
+                        <div class="col-xs-2">
+                             <nvd3 options="options" data="getData(resource)"></nvd3>
                         </div>
-                    </div><!--// .tabpanel -->
-                    
-
-                    <div role="tabpanel" class="tab-pane" id="applications">
-                        
-                        <div class="col-xs-12 outlier" ng-repeat="application in applications">
-                            <div class="col-xs-6"><a href="#details">{{ application.name }}</a></div>
-                            <div class="col-xs-6 text-right">
-                                <div class="col-xs-6">{{ application.cost.monthToDate | currency }}</div>
-                                <div class="col-xs-6">{{ application.cost.yearToDate | currency }}</div>
-                            </div>
+                        <div class="col-xs-4 text-right">
+                            <span ng-repeat="spec in resource.data">{{ spec }}</span>
                         </div>
+                    </div>
+                </div>
+                <!--// .tabpanel -->
 
-                    </div><!--// .tabpanel -->
-                </div><!--// .tab-content -->
-            </div><!--// .tabpanel -->
-                
-                
+
+                <div role="tabpanel" class="tab-pane" id="applications">
+
+                    <div class="col-xs-12 outlier" ng-repeat="application in applications">
+                        <div class="col-xs-6"><a href="#details">{{ application.name }}</a></div>
+                        <div class="col-xs-6 text-right">
+                            <div class="col-xs-6">{{ application.cost.monthToDate | currency }}</div>
+                            <div class="col-xs-6">{{ application.cost.yearToDate | currency }}</div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--// .tabpanel -->
             </div>
+            <!--// .tab-content -->
         </div>
+        <!--// .tabpanel -->
+
+
+    </div>
+</div>
