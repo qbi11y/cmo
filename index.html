@@ -1,11 +1,27 @@
-<html>
-    <head>
-        <title>cloudMatrix One</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <a href="store/index.html">Store</a>
-        <a href="catalog/index.html">Catalog</a>
-        <a href="manage/index.html">Manage</a>
-    </body>
+<html ng-app="CMO">
+<title>cloudMatrix One</title>
+    <link rel="stylesheet" href="../packages/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/stylesheets/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </html>
+<body ng-controller="ProductController as products">
+    <script type="text/javascript" src="../packages/angular/angular.min.js"></script> <!-- main angular file -->
+    <script src="../packages/angular-route/angular-route.js"></script><!-- angular route module -->
+    <script type="text/javascript" src="js/controllers.js"></script><!-- custom angular controllers -->
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div ng-include="'templates/nav-bar.html'"></div>
+            </div>
+        </div>
+    
+    <!-- All of the views for the store are loaded into this div -->
+        <div ng-view></div> 
+    </div>   
+    
+    <script type="text/javascript" src="../packages/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../packages/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/data.js"></script>
+    <script type="text/javascript" src="js/routing-scripts.js"></script>
+</body>

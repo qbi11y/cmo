@@ -1,0 +1,44 @@
+
+<div class="row" ng-show="addProductResponse != undefined">
+        <div class="col-sm-12">
+            <div class="alert alert-success alert-dismissible fade in" ng-show="addProductResponse" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button><i class="fa fa-check"></i><span>The service was successfully added to the cart.</span>
+            </div>
+
+            <div class="alert alert-danger alert-dismissible fade in" ng-show="!addProductResponse" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button><i class="fa fa-check"></i><span>There is a problem on our end.</span>
+            </div>
+        </div>
+    </div>
+
+<div class="row phone-disabled">
+    <div class="col-sm-12">
+        <a href="#add-product">add product</a>
+    </div>
+</div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div ng-include="'../templates/search.html'"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12"></div>
+    </div>
+
+    <div class="row" ng-controller="CatalogController as items">
+        <div class="col-sm-12">
+            <div class="product" ng-repeat="item in items | filter: searchText" ng-mouseenter="rowClick()">
+                <div class="list list-image">
+                    <div><img ng-src="{{ item.thumbnail }}"></div>
+                    <div class="phone-disabled"><a href="#edit-product" class="btn btn-primary"> Edit</a></div>
+                </div>
+                <div class="list list-text">
+                    <div>{{ item.name }}</div>
+                    <div><a href="#details">{{ item.description }}</a></div>
+                    <div>Total Instances: {{ item.instances }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
