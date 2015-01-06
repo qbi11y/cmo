@@ -1,10 +1,12 @@
-var cmoControllers = angular.module('cmoControllers', []);
-cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarProducts', 'ManageResponses', 'CompareItems', function ($scope, Products, SimilarProducts, ManageResponses, CompareItems) {
+var cmoControllers = angular.module('cmoControllers', ['Data']);
+cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarProducts', 'ManageResponses', 'CompareItems', 'ShoppingCart', function ($scope, Products, SimilarProducts, ManageResponses, CompareItems, ShoppingCart) {
     $scope.menuStore = true;
     $scope.products = Products.getProducts();
-    this.similarProducts = SimilarProducts;
+    $scope.similarProducts = SimilarProducts;
     $scope.cartResponse = ManageResponses.getResponse('addToCart');
     $scope.compare = CompareItems.getCompareItems();
+    $scope.cart = ShoppingCart.getCart();
+    $scope.cartTotalItems = ShoppingCart.getCartItemTotal();
     $scope.selectedView = 'list';
     $scope.setCompare = function (item, checked) {
         if (checked == true) {
@@ -18,6 +20,7 @@ cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarPr
 
     $scope.switchView = function (view) {
         $scope.selectedView = view;
+        console.log($scope.cartTotalItems);
         //console.log(view);
     }
 
@@ -32,9 +35,13 @@ cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarPr
     $scope.addToCart = function () {
         //add to cart
         //on success set response;
+        ShoppingCart.setCart({name: 'some name', value: 'some value'});
+        console.log(ShoppingCart.getCartItemTotal());
+        $scope.cartTotalItems = 52;
         ManageResponses.setResponse('cart', Math.round(Math.random()));
         $scope.cartResponse = ManageResponses.getResponse();
         window.scroll(0, 0);
+
     }
 }]);
 

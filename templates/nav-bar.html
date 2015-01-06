@@ -17,6 +17,7 @@
             <li ng-class="{true: 'active', false: 'inactive'}[menuStore]"><a href="/cmo">Store<span class="sr-only">(current)</span></a></li>
             <li ng-class="{true: 'active', false: 'inactive'}[menuManage]"><a href="/cmo/manage">Manage</a></li>
             <li ng-class="{true: 'active', false: 'inactive'}[menuCatalog]"><a href="/cmo/catalog">Catalog</a></li>
+            <li><a href="/cmo/catalog">Cart {{ cartTotalItems }}</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

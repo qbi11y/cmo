@@ -23,17 +23,18 @@
 -->
     
     <!-- search field -->
-    
+    <!--
     <div class="row">
         <div class="col-sm-12">
             <div ng-include="'templates/search.html'"></div>
         </div>
     </div>
+-->
 
     <div class="row">
         <div class="col-md-12">
             <div class="col-md-3">
-                <div ng-include="templates/filters.html"></div>
+                <div ng-include="'templates/filters.html'"></div>
             </div>
 
             <div class="col-md-9">
@@ -72,6 +73,7 @@
                             </div>
                             <div class="list-text">
                                 <div class="list-item-sub">{{ product.name }}</div><!-- product name -->
+                                <div><strong>Type:</strong> {{ product.type }}</div><!-- reward points -->
                                 <div><strong>Points:</strong> {{ product.points | number }}</div><!-- reward points -->
                                 <div><a href="#details" >{{ product.shortDescription }}</a></div><!-- short description -->
                                 <div class="checkbox phone-disabled">
