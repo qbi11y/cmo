@@ -40,7 +40,7 @@
             <div class="col-md-9">
                 <div class="row phone-disabled">
                     <div class="col-sm-1">
-                        <a href="#compare">Compare</a>
+                        <a href="#store/compare">Compare</a>
                     </div>
                     <div class="col-sm-11">
                         <div class="compare" ng-repeat="item in compare"><img class="compare-item" ng-src="{{ item.thumbnail }}"></div>-
@@ -65,17 +65,18 @@
                     <div class="col-sm-12">
                         <div class="product" ng-class="{grid: selectedView == 'grid'}" ng-repeat="product in products | filter:searchText" id="{{ product.id }}">
                             <div class="list-image">
-                                <div class="col-xs-6 image text-left"><img ng-model="checkbox" ng-src="{{ product.thumbnail }}"></div>
+                                <div class="col-xs-6 image text-left"><a href="#store/details"><img ng-model="checkbox" ng-src="{{ product.thumbnail }}"></a></div>
                                 <div class="col-xs-6 text-right">
                                     <div>starting at</div>
                                     <div class="list-item-sub">{{ product.price | currency }}</div><!-- product price -->
+                                    <div><a href="#/store/configure" class="btn btn-primary">Configure</a></div><!-- product price -->
                                 </div>
                             </div>
                             <div class="list-text">
-                                <div class="list-item-sub">{{ product.name }}</div><!-- product name -->
+                                <div class="list-item-sub"><a href="#store/details">{{ product.name }}</a></div><!-- product name -->
                                 <div><strong>Type:</strong> {{ product.type }}</div><!-- reward points -->
                                 <div><strong>Points:</strong> {{ product.points | number }}</div><!-- reward points -->
-                                <div><a href="#details" >{{ product.shortDescription }}</a></div><!-- short description -->
+                                <div><a href="#store/details" >{{ product.shortDescription }}</a></div><!-- short description -->
                                 <div class="checkbox phone-disabled">
                                     <label>
                                         <input type="checkbox" ng-model="checkbox" ng-change="setCompare(product, checkbox)">Compare

@@ -13,13 +13,13 @@
 
 <div class="row phone-disabled">
     <div class="col-sm-12">
-        <a href="#add-product">add product</a>
+        <a href="#catalog/add-product">add product</a>
     </div>
 </div>
 
     <div class="row">
         <div class="col-sm-12">
-            <div ng-include="'../templates/search.html'"></div>
+            <div ng-include="'templates/search.html'"></div>
         </div>
     </div>
 
@@ -32,11 +32,11 @@
             <div class="product" ng-repeat="item in items | filter: searchText" ng-mouseenter="rowClick()">
                 <div class="list list-image">
                     <div><img ng-src="{{ item.thumbnail }}"></div>
-                    <div class="phone-disabled"><a href="#edit-product" class="btn btn-primary"> Edit</a></div>
+                    <div class="phone-disabled"><a href="#catalog/edit-product" class="btn btn-primary"> Edit</a></div>
                 </div>
                 <div class="list list-text">
                     <div>{{ item.name }}</div>
-                    <div><a href="#details">{{ item.description }}</a></div>
+                    <div><a href="#catalog/details">{{ item.description }}</a></div>
                     <div>Total Instances: {{ item.instances }}</div>
                 </div>
             </div>

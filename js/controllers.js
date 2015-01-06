@@ -6,7 +6,7 @@ cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarPr
     $scope.cartResponse = ManageResponses.getResponse('addToCart');
     $scope.compare = CompareItems.getCompareItems();
     $scope.cart = ShoppingCart.getCart();
-    $scope.cartTotalItems = ShoppingCart.getCartItemTotal();
+    $scope.cartTotalItems = ShoppingCart;
     $scope.selectedView = 'list';
     $scope.setCompare = function (item, checked) {
         if (checked == true) {
