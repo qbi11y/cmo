@@ -1,6 +1,13 @@
 <!-- basic settings accordion section -->
 <div class="row">
   <div class="col-sm-12">
+    <h3>{{ configureProduct.name }}</h3>
+    <p>{{ configureProduct.description }}</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
       <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingOne">
@@ -154,6 +161,6 @@
 
 <div class="row">
   <div class="col-sm-12">
-    <a href="#store/configure/summary" class="btn btn-primary btn-block">Done</a>
+    <a href="#store/configure/summary" class="btn btn-primary btn-block" ng-click="topOfPage()">Done</a>
   </div>
 </div>

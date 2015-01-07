@@ -1,6 +1,8 @@
 <select class="form-control" ng-model="selectedRole" ng-change="updateRole(selectedRole)">
     <option value="admin" selected="selected">Admin</option>
-    <option value="manager">Manager</option>
+    <option value="consumer">Consumer</option>
+    <option value="collaborator">Collaborator</option>
+    <option value="executive">Executive</option>
 </select>
 
 <div ng-class="{'hidden' :  role !== 'admin', 'visible' : role === 'admin'}">
@@ -21,20 +23,56 @@
     </div>
 </div>
 
-<div ng-class="{'hidden' :  role !== 'manager', 'visible' : role === 'manager'}">
+<div ng-class="{'hidden' :  role !== 'consumer', 'visible' : role === 'consumer'}">
     <div class="row">
-        <h3 class="col-sm-12">Manager</h3>
+        <h3 class="col-sm-12">Consumer</h3>
     </div>
     <div class="row">
-        <div class="col-sm-4 text-center">Manager Insight 1</div>
-        <div class="col-sm-4 text-center">Manager Insight 2</div>
-        <div class="col-sm-4 text-center">Manager Insight 3</div>
+        <div class="col-sm-4 text-center">Consumer Insight 1</div>
+        <div class="col-sm-4 text-center">Consumer Insight 2</div>
+        <div class="col-sm-4 text-center">Consumer Insight 3</div>
     </div>
 
     <div class="row">
-        <div class="col-sm-3 text-center">Manager Actions 1</div>
-        <div class="col-sm-3 text-center">Manager Actions 2</div>
-        <div class="col-sm-3 text-center">Manager Actions 3</div>
-        <div class="col-sm-3 text-center">Manager Actions 4</div>
+        <div class="col-sm-3 text-center">Consumer Actions 1</div>
+        <div class="col-sm-3 text-center">Consumer Actions 2</div>
+        <div class="col-sm-3 text-center">Consumer Actions 3</div>
+        <div class="col-sm-3 text-center">Consumer Actions 4</div>
+    </div>
+</div>
+
+<div ng-class="{'hidden' :  role !== 'collaborator', 'visible' : role === 'collaborator'}">
+    <div class="row">
+        <h3 class="col-sm-12">Collaborator</h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 text-center">Collaborator Insight 1</div>
+        <div class="col-sm-4 text-center">Collaborator Insight 2</div>
+        <div class="col-sm-4 text-center">Collaborator Insight 3</div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3 text-center">Collaborator Actions 1</div>
+        <div class="col-sm-3 text-center">Collaborator Actions 2</div>
+        <div class="col-sm-3 text-center">Collaborator Actions 3</div>
+        <div class="col-sm-3 text-center">Collaborator Actions 4</div>
+    </div>
+</div>
+
+<div ng-class="{'hidden' :  role !== 'executive', 'visible' : role === 'executive'}">
+    <div class="row">
+        <h3 class="col-sm-12">Executive</h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 text-center">Executive Insight 1</div>
+        <div class="col-sm-4 text-center">Executive Insight 2</div>
+        <div class="col-sm-4 text-center">Executive Insight 3</div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3 text-center">Executive Actions 1</div>
+        <div class="col-sm-3 text-center">Executive Actions 2</div>
+        <div class="col-sm-3 text-center">Executive Actions 3</div>
+        <div class="col-sm-3 text-center">Executive Actions 4</div>
     </div>
 </div>

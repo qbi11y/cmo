@@ -2,14 +2,14 @@
     
     <div class="row">
         <div class="col-sm-12"> 
-            <div><img src="http://res.cloudinary.com/gravitant/image/upload/v1413466761/providers/aws.jpg"></div>
-            <div class="text-center"><h3>{{ products[0].name }}</h3></div>
+            <div><img ng-src="{{ configureProduct.thumbnail }}"></div>
+            <div class="text-center"><h3>{{ configureProduct.name }}</h3></div>
             <div class="text-center list-item-sub">$500 per month<br>$50 one time fee</div>
-            <div>{{ products[0].description }}</div>
+            <div>{{ configureProduct.description }}</div>
         </div>
     </div>
     
-    <div class="row summary-category" ng-repeat="product in products[0].categories">
+    <div class="row summary-category" ng-repeat="product in configureProduct.categories">
         <div class="col-sm-12">
             <div class="col-sm-12"><h2>{{ product.name }}</h2></div>
             <div class="col-xs-12 list-item" ng-repeat="spec in product.options">
@@ -35,6 +35,6 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <a href="#/store" class="btn btn-primary btn-block" ng-click="addToCart()">Add to Cart</a>
+            <a href="#/store" class="btn btn-primary btn-block" ng-click="addToCart(configureProduct)">Add to Cart</a>
         </div>
     </div>

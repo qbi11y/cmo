@@ -30,10 +30,36 @@ app.factory('ShoppingCart', function() {
             return cart.length
         },
         setCart: function(product) {
-            cart.push(product);
+            if (product) {
+                cart.push(product);
+            } else {
+                cart = [];
+            }
+        },
+        deleteFromCart: function(item) {
+            console.log(cart.id);
+            for (var i=0; i < cart.length; i++){
+                if (cart[i].id == item.id) {
+                    cart.splice(i, 1);
+                    console.log('new cart', cart)
+                }
+            }
+            
         }
     }
-})
+});
+
+app.factory('NeedsApproval', function() {
+    var approve = [];
+    return {
+        getItems: function() {
+            return approve.length
+        },
+        setItems: function(item) {
+            approve.push(item);
+        }
+    }
+});
 
 //application data
 app.factory('Applications', function() {

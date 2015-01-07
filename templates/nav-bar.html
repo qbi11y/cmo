@@ -8,16 +8,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#/">cloudMatrix One {{}}</a>
-            <li class="navbar-brand"><a href="#store/cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><span class="badge">{{ cartTotalItems.getCartItemTotal() }}</span></a></li>
+            <a class="navbar-brand" href="#/" ng-click="updateNav('logo')">cloudMatrix One {{}}</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-            <li ng-class="{true: 'active', false: 'inactive'}[menuStore]"><a href="#store">Store<span class="sr-only">(current)</span></a></li>
-            <li ng-class="{true: 'active', false: 'inactive'}[menuManage]"><a href="#manage">Manage</a></li>
-            <li ng-class="{true: 'active', false: 'inactive'}[menuCatalog]"><a href="#catalog">Catalog</a></li>
+            <li ng-class="{'active' : selectedSection == 'store', 'inactive' : selectedSection != 'store'}"><a href="#store" ng-click="updateNav('store')">Store<span class="sr-only">(current)</span></a></li>
+            <li ng-class="{'active' : selectedSection == 'manage', 'inactive' : selectedSection != 'manage'}"><a href="#manage" ng-click="updateNav('manage')">Manage <span class="badge">{{ approvalItems.getItems() }}</span></a></li>
+            <li ng-class="{'active' : selectedSection == 'catalog', 'inactive' : selectedSection != 'catalog'}"><a href="#catalog" ng-click="updateNav('catalog')">Catalog</a></li>
+            <li ng-class="{'active' : selectedSection == 'cart', 'inactive' : selectedSection != 'cart'}"><a href="#store/cart" ng-click="updateNav('cart')"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><span class="badge">{{ cartTotalItems.getCartItemTotal() }}</span></a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

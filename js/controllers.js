@@ -7,8 +7,8 @@ cmoControllers.controller('HomeController', ['$scope', function($scope) {
     }
 }]);
 
-cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarProducts', 'ManageResponses', 'CompareItems', 'ShoppingCart', function ($scope, Products, SimilarProducts, ManageResponses, CompareItems, ShoppingCart) {
-    $scope.menuStore = true;
+cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarProducts', 'ManageResponses', 'CompareItems', 'ShoppingCart','ConfigureProduct','NeedsApproval', function ($scope, Products, SimilarProducts, ManageResponses, CompareItems, ShoppingCart, ConfigureProduct, NeedsApproval) {
+    $scope.selectedSection = 'store';
     $scope.products = Products.getProducts();
     $scope.similarProducts = SimilarProducts;
     $scope.cartResponse = ManageResponses.getResponse('addToCart');
@@ -16,6 +16,8 @@ cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarPr
     $scope.cart = ShoppingCart.getCart();
     $scope.cartTotalItems = ShoppingCart;
     $scope.selectedView = 'list';
+    $scope.approvalItems = NeedsApproval;
+    $scope.configureProduct = ConfigureProduct.getConfigureProduct();
     $scope.setCompare = function (item, checked) {
         if (checked == true) {
             $scope.compare.push(item);
@@ -26,9 +28,16 @@ cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarPr
         CompareItems.setCompareItems($scope.compare);
     }
 
+    $scope.updateNav = function(page) {
+        $scope.selectedSection = page;
+    }
+    $scope.deleteFromCart = function(item) {
+        ShoppingCart.deleteFromCart(item);
+    }
+
     $scope.switchView = function (view) {
         $scope.selectedView = view;
-        console.log($scope.cartTotalItems);
+        //console.log($scope.cartTotalItems);
         //console.log(view);
     }
 
@@ -40,15 +49,33 @@ cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarPr
         }
     }
 
-    $scope.addToCart = function () {
+    $scope.configure = function(product) {
+        $scope.topOfPage();
+        ConfigureProduct.setCompareProduct(product);
+    }
+
+    $scope.topOfPage = function() {
+        window.scroll(0, 0);
+    }
+
+    $scope.submit = function(items) {
+        ShoppingCart.setCart();
+        NeedsApproval.setItems(items);
+        $scope.cart = ShoppingCart.getCart();
+
+        //console.log('products', items);
+    }
+
+    $scope.addToCart = function (product) {
         //add to cart
         //on success set response;
-        ShoppingCart.setCart({name: 'some name', value: 'some value'});
-        console.log(ShoppingCart.getCartItemTotal());
+        //console.log('product ', product);
+        ShoppingCart.setCart(product);
+        //console.log(ShoppingCart.getCartItemTotal());
         $scope.cartTotalItems = 52;
         ManageResponses.setResponse('cart', Math.round(Math.random()));
         $scope.cartResponse = ManageResponses.getResponse();
-        window.scroll(0, 0);
+        $scope.topOfPage();
 
     }
 }]);
@@ -134,6 +161,7 @@ cmoControllers.controller('CatalogController', ['$scope', 'Products', 'Providers
     $scope.addProductResponse = ManageResponses.getResponse('addProduct');
 
     $scope.addService = function() {
+        console.log($scope.formData);
         for (i=0; i < $scope.providers.length; i++) {
             if ($scope.providers[i].name == $scope.formData.provider) {
                 $scope.formData.thumbnail = $scope.providers[i].thumbnail;
@@ -204,6 +232,20 @@ cmoControllers.factory('CompareItems', function () {
         }
     }
 });
+
+cmoControllers.factory('ConfigureProduct', function() {
+    var product = {};
+    return {
+        getConfigureProduct: function() {
+            return product
+        },
+        setCompareProduct: function(selectedProduct) {
+            product = selectedProduct;
+            console.log('selected product ', product)
+
+        }
+    }
+})
 
 
 
