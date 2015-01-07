@@ -4,7 +4,7 @@
 }
 
 /* line 5, ../sass/styles.scss */
-.phone-disabled {
+.phone-disabled, .hidden {
   display: none;
 }
 

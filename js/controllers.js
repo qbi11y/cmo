@@ -1,4 +1,12 @@
 var cmoControllers = angular.module('cmoControllers', ['Data']);
+
+cmoControllers.controller('HomeController', ['$scope', function($scope) {
+    $scope.role = 'admin';
+    $scope.updateRole = function(role) {
+        $scope.role = role;
+    }
+}]);
+
 cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarProducts', 'ManageResponses', 'CompareItems', 'ShoppingCart', function ($scope, Products, SimilarProducts, ManageResponses, CompareItems, ShoppingCart) {
     $scope.menuStore = true;
     $scope.products = Products.getProducts();

@@ -4,8 +4,8 @@ app.config(['$routeProvider', function($routeProvider){
     $routeProvider
 
     .when('/', {
-        templateUrl: 'templates/store/main.html',
-        controller: 'ProductController'
+        templateUrl: 'templates/home.html',
+        controller: 'HomeController'
     })
 
     //route for the store
@@ -23,6 +23,11 @@ app.config(['$routeProvider', function($routeProvider){
     //route to the store configure
     .when('/store/configure', {
         templateUrl: 'templates/store/configure.html',
+        controller: 'ProductController'
+    })
+
+    .when('/store/cart', {
+        templateUrl: 'templates/store/cart.html',
         controller: 'ProductController'
     })
 
