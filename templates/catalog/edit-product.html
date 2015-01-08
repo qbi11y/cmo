@@ -1,28 +1,24 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <a href="#/">back</a>
+            <a href="#/catalog">back</a>
         </div>
     </div>
-
+    item here {{ item }}
     <div class="row">
         <div class="col-sm-12">
             <form role="form">
               <div class="form-group">
                 <label for="exampleInputEmail1">Provider</label>
-                <select class="form-control">
-                  <option>Select Provider</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                <select class="form-control" ng-model="formData.provider">
+                  <option ng-repeat="provider in providers">{{ provider.name }}</option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Cloud Instance</label>
                 <select multiple class="form-control">
                   <option>Select Cloud Instance</option>
-                  <option>2</option>
+                  <option value="2" selected>2</option>
                   <option>3</option>
                   <option>4</option>
                   <option>5</option>
@@ -34,7 +30,7 @@
                 <select class="form-control">
                   <option>Offering Type</option>
                   <option>2</option>
-                  <option>3</option>
+                  <option value="3" selected>3</option>
                   <option>4</option>
                   <option>5</option>
                 </select>
@@ -46,7 +42,7 @@
                   <option>Service Type</option>
                   <option>2</option>
                   <option>3</option>
-                  <option>4</option>
+                  <option selected>4</option>
                   <option>5</option>
                 </select>
               </div>
@@ -57,13 +53,13 @@
               </div>
 
               <div class="form-group">
-                <label for="exampleInputEmail1">Service Name</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter service name">
+                <label for="exampleInputEmail1">Provisioning Metadata Helper Class</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter provisioning metadata helper class">
               </div>
 
               <div class="form-group">
-                <label for="exampleInputEmail1">Provisioning Metadata Helper Class</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter provisioning metadata helper class">
+                <label for="exampleInputEmail1">Price</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" value="{{ item.price }}">
               </div>
 
               <select multiple class="form-control">
@@ -76,7 +72,7 @@
 
               <div class="form-group">
                 <label for="exampleInputEmail1">Description</label>
-                <textarea class="form-control" rows="5"></textarea>
+                <textarea class="form-control" rows="5">{{ item.description }}</textarea>
               </div>
 
               <div class="form-group">

@@ -30,15 +30,16 @@
     <div class="row" ng-controller="CatalogController as items">
         <div class="col-sm-12">
             <div class="product" ng-repeat="item in items | filter: searchText" ng-mouseenter="rowClick()">
-                <div class="list list-image">
-                    <div><img ng-src="{{ item.thumbnail }}"></div>
-                    <div class="phone-disabled"><a href="#catalog/edit-product" class="btn btn-primary"> Edit</a></div>
-                </div>
-                <div class="list list-text">
+                <div class="list">
+                    <div class="list-image"><img ng-src="{{ item.thumbnail }}"></div>
+                </div><!-- list list-image -->
+
+                <div class="list-text">
                     <div>{{ item.name }}</div>
                     <div><a href="#catalog/details">{{ item.description }}</a></div>
                     <div>Total Instances: {{ item.instances }}</div>
-                </div>
-            </div>
-        </div>
-    </div>
+                    <div class="phone-disabled"><a href="#catalog/edit-product" ng-click="edit(item)" class="btn btn-primary"> Edit</a></div>
+                </div><!-- list-text -->
+            </div><!-- product -->
+        </div><!-- column -->
+    </div><!-- row -->

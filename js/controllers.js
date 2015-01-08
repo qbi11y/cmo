@@ -153,12 +153,13 @@ cmoControllers.controller('ManageController', ['$scope', 'ManageViews', 'Applica
 
 }]);
 
-cmoControllers.controller('CatalogController', ['$scope', 'Products', 'ProvidersList', 'ManageResponses', function ($scope, Products, ProvidersList, ManageResponses) {
+cmoControllers.controller('CatalogController', ['$scope', 'Products', 'ProvidersList', 'ManageResponses', 'EditProduct', function ($scope, Products, ProvidersList, ManageResponses, EditProduct) {
     $scope.items = Products.getProducts();
     $scope.menuCatalog = true;
     $scope.providers = ProvidersList;
     $scope.formData = {};
     $scope.addProductResponse = ManageResponses.getResponse('addProduct');
+    $scope.item = EditProduct.getItem();
 
     $scope.addService = function() {
         console.log($scope.formData);
@@ -174,6 +175,12 @@ cmoControllers.controller('CatalogController', ['$scope', 'Products', 'Providers
 
     $scope.rowClick = function () {
         console.log('enter the row')
+    }
+
+    $scope.edit = function(item) {
+        EditProduct.setItem(item);
+        //$scope.item = EditProduct.getItem();
+        console.log('item to be edited ', $scope.item)
     }
 }]);
 

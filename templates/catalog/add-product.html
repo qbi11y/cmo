@@ -19,6 +19,16 @@
                   <option>Add Provider</option>
                 </select>
               </div>
+
+              <div class="form-group drop-form" ng-show="formData.provider == 'Add Provider'">
+                <label for="providerName">Provider Name</label>
+                <input type="text" class="form-control" id="provider-name" placeholder="Enter Provider Name" ng-model="formData.newProviderName">
+                <label for="providerName">Provider Account Name</label>
+                <input type="text" class="form-control" id="provider-account-name" placeholder="Enter Provider Account Name" ng-model="formData.newProviderAccountName">
+                <label for="providerName">Provider Password</label>
+                <input type="password" class="form-control" id="provider-password" placeholder="Enter Provider Password" ng-model="formData.newProviderPassword">
+              </div>
+
               <div class="form-group">
                 <label for="exampleInputEmail1">Cloud Instance</label>
                 <select multiple class="form-control" ng-model="formData.cloudInstance">

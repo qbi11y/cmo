@@ -1,3 +1,12 @@
+/*
+SASS Variables
+*/
+
+$form-background: gray;
+
+/*-------end variables-------------------*/
+
+
 * {
     box-sizing: border-box;
 }
@@ -6,13 +15,19 @@
     display: none;
 }
 
+.drop-form {
+    background-color: $form-background;
+    padding: 2em;
+    border-radius: .5em;
+}
+
 .grav-input {
     height: 2em;
     font-size: 1.5em;
 }
 
 .product {
-    border-bottom: 1px dotted gray;
+    border-bottom: 1px dotted  gray;
     width: 100%;
     padding: 1.5em 1em;
 }
@@ -114,6 +129,8 @@
 }
 
 
+
+/*devices larger than smart phones*/
 @media screen and (min-width: 480px) {
     .phone-disabled {
         display: block;

@@ -1,5 +1,18 @@
 var app = angular.module('Data', []);
 
+//service to take care of the products that need to be edited
+app.factory('EditProduct', function() {
+    var item = {}
+    return {
+        getItem: function() {
+            return item
+        },
+        setItem: function(selectedItem) {
+            item = selectedItem
+        }
+    }
+});
+
 app.factory('ProvidersList', function() {
     var providers = [
     {
