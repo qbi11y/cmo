@@ -85,6 +85,12 @@ app.config(['$routeProvider', function($routeProvider){
         controller: 'CatalogController'
     })
 
+    //routes to the setup
+    .when('/setup', {
+        templateUrl: 'templates/setup/main.html',
+        controller: 'CatalogController'
+    })
+
 
     //default route takes you to the store
     .otherwise({

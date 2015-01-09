@@ -22,11 +22,35 @@
 
               <div class="form-group drop-form" ng-show="formData.provider == 'Add Provider'">
                 <label for="providerName">Provider Name</label>
-                <input type="text" class="form-control" id="provider-name" placeholder="Enter Provider Name" ng-model="formData.newProviderName">
-                <label for="providerName">Provider Account Name</label>
-                <input type="text" class="form-control" id="provider-account-name" placeholder="Enter Provider Account Name" ng-model="formData.newProviderAccountName">
-                <label for="providerName">Provider Password</label>
-                <input type="password" class="form-control" id="provider-password" placeholder="Enter Provider Password" ng-model="formData.newProviderPassword">
+                <select class="form-control" ng-model="formData.addProvider" ng-init="formData.addProvider = 0">
+                  <option value="0">Select Provider</option>
+                  <option value="p1" selected>Additional Provider 1</option>
+                  <option value="p2">Additional Provider 2</option>
+                  <option value="p3">Additional Provider 3</option>
+                </select>
+
+                <div ng-show="formData.addProvider == 'p1'">
+                  <label for="providerName">Provider Account Name</label>
+                  <input type="text" class="form-control" id="provider-account-name" placeholder="Enter Provider Account Name" ng-model="formData.newProviderAccountName">
+                  <label for="providerName">Provider Password</label>
+                  <input type="password" class="form-control" id="provider-password" placeholder="Enter Provider Password" ng-model="formData.newProviderPassword">
+                </div>
+
+                <div ng-show="formData.addProvider == 'p2'">
+                  <label for="providerName">SSH Key</label>
+                  <input type="text" class="form-control" id="provider-account-name" placeholder="Enter Provider Account Name" ng-model="formData.newProviderAccountName">
+                </div>
+
+                <div ng-show="formData.addProvider == 'p3'">
+                  <label for="providerName">SSH Key</label>
+                  <input type="text" class="form-control" id="provider-account-name" placeholder="Enter Provider Account Name" ng-model="formData.newProviderAccountName">
+                  <label for="providerName">Provider Account Name</label>
+                  <input type="text" class="form-control" id="provider-account-name" placeholder="Enter Provider Account Name" ng-model="formData.newProviderAccountName">
+                  <label for="providerName">Provider Password</label>
+                  <input type="password" class="form-control" id="provider-password" placeholder="Enter Provider Password" ng-model="formData.newProviderPassword">
+                  <label for="providerName">Secret Key</label>
+                  <input type="text" class="form-control" id="provider-account-name" placeholder="Enter Provider Account Name" ng-model="formData.newProviderAccountName">
+                </div>
               </div>
 
               <div class="form-group">
@@ -54,6 +78,18 @@
               <div class="form-group">
                 <label for="exampleInputEmail1">Service Type</label>
                 <select class="form-control" ng-model="formData.serviceType">
+                  <option>VM Service</option>
+                  <option>Non-VM Service</option>
+                  <option>Managed Service</option>
+                  <option>Saas Service</option>
+                  <option>Managed Cloud Service</option>
+                </select>
+              </div>
+
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Quality Level Agreement</label>
+                <select class="form-control" ng-model="formData.qla">
                   <option>Service Type</option>
                   <option>2</option>
                   <option>3</option>
@@ -74,6 +110,11 @@
 
               <div class="form-group">
                 <label for="exampleInputEmail1">Starting Price</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter service name" ng-model="formData.price">
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Pricing Rules</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter service name" ng-model="formData.price">
               </div>
 
@@ -99,9 +140,27 @@
                 <label for="exampleInputEmail1">Additional Information</label>
                 <textarea class="form-control" rows="5" ng-model="formData.additionalInfo"></textarea>
               </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">SLA</label>
+                <textarea class="form-control" rows="5" ng-model="formData.additionalInfo"></textarea>
+              </div>
+
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Terms and Conditions</label>
+                <textarea class="form-control" rows="5" ng-model="formData.additionalInfo"></textarea>
+              </div>
+
+
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" ng-model="formData.enabled"> Enabled
+                  <input type="checkbox" ng-model="formData.storeEnabled">Service Store Enabled
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" ng-model="formData.solutionEnabled">Solution Center Enabled
                 </label>
               </div>
 

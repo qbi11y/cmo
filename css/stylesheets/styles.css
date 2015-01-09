@@ -2,167 +2,196 @@
 SASS Variables
 */
 /*-------end variables-------------------*/
-/* line 10, ../sass/styles.scss */
+/* line 8, ../sass/styles.scss */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* line 13, ../sass/styles.scss */
+ul li {
+  border-bottom: 1px dotted gray;
+  padding: 1.5em 0;
+}
+
+/* line 18, ../sass/styles.scss */
 * {
   box-sizing: border-box;
 }
 
-/* line 14, ../sass/styles.scss */
+/* line 22, ../sass/styles.scss */
+.dashboard-chart {
+  width: 20em;
+}
+
+/* line 26, ../sass/styles.scss */
+.dashboard-space {
+  margin-top: 5em;
+}
+
+/* line 30, ../sass/styles.scss */
+.page-alert {
+  border-bottom: 1px dotted gray;
+  height: 40px;
+  margin-top: 3em;
+}
+
+/* line 36, ../sass/styles.scss */
 .phone-disabled, .hidden {
   display: none;
 }
 
-/* line 18, ../sass/styles.scss */
+/* line 40, ../sass/styles.scss */
 .drop-form {
   background-color: gray;
   padding: 2em;
   border-radius: .5em;
 }
 
-/* line 24, ../sass/styles.scss */
+/* line 46, ../sass/styles.scss */
 .grav-input {
   height: 2em;
   font-size: 1.5em;
 }
 
-/* line 29, ../sass/styles.scss */
+/* line 51, ../sass/styles.scss */
 .product {
   border-bottom: 1px dotted  gray;
   width: 100%;
   padding: 1.5em 1em;
 }
 
-/* line 35, ../sass/styles.scss */
+/* line 57, ../sass/styles.scss */
 .grid {
   display: inline-block;
   width: 50%;
 }
 
-/* line 40, ../sass/styles.scss */
+/* line 62, ../sass/styles.scss */
 .list {
   display: inline-block;
 }
 
-/* line 44, ../sass/styles.scss */
+/* line 66, ../sass/styles.scss */
 .list-image {
   /*width: 30%;*/
   height: 75px;
   vertical-align: top;
 }
 
-/* line 50, ../sass/styles.scss */
+/* line 72, ../sass/styles.scss */
 .list-image img {
   width: 150px;
 }
 
-/* line 54, ../sass/styles.scss */
+/* line 76, ../sass/styles.scss */
 .list-image .image {
   height: 50px;
 }
 
-/* line 58, ../sass/styles.scss */
+/* line 80, ../sass/styles.scss */
 .list-text {
   /*width: 65%;*/
 }
 
-/* line 62, ../sass/styles.scss */
+/* line 84, ../sass/styles.scss */
 .scorecard {
   background-color: gray;
   margin-bottom: 1em;
 }
 
-/* line 67, ../sass/styles.scss */
+/* line 89, ../sass/styles.scss */
 .scorecard h1 {
   font-size: 3em;
   color: white;
 }
 
-/* line 76, ../sass/styles.scss */
+/* line 98, ../sass/styles.scss */
 .summary-category h2 {
   border-bottom: 1px solid gray;
   padding-bottom: .5em;
 }
 
-/* line 81, ../sass/styles.scss */
+/* line 103, ../sass/styles.scss */
 .list-item {
   border-bottom: 1px dotted gray;
   padding: 1em 0;
 }
 
-/* line 86, ../sass/styles.scss */
+/* line 108, ../sass/styles.scss */
 .outlier {
   border-bottom: 1px dashed gray;
   padding: 3em 1.8em;
 }
 
-/* line 91, ../sass/styles.scss */
+/* line 113, ../sass/styles.scss */
 .navbar {
   margin-bottom: 0;
 }
 
-/* line 95, ../sass/styles.scss */
+/* line 117, ../sass/styles.scss */
 .list-item-sub {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   font-size: 24px;
 }
 
 /* store details page */
-/* line 101, ../sass/styles.scss */
+/* line 123, ../sass/styles.scss */
 #detail-icon img {
   width: 150px;
 }
 
-/* line 105, ../sass/styles.scss */
+/* line 127, ../sass/styles.scss */
 .detail-title {
   font-weight: lighter;
 }
 
-/* line 109, ../sass/styles.scss */
+/* line 131, ../sass/styles.scss */
 .spec-category {
   font-size: 1.5em;
 }
 
-/* line 113, ../sass/styles.scss */
+/* line 135, ../sass/styles.scss */
 .specs {
   margin-bottom: 2em;
 }
 
 /*summary page*/
-/* line 118, ../sass/styles.scss */
+/* line 140, ../sass/styles.scss */
 .simple-list {
   border-bottom: 1px dotted gray;
   padding: 2em;
 }
 
-/* line 123, ../sass/styles.scss */
+/* line 145, ../sass/styles.scss */
 .simple-list img {
   width: 150px;
 }
 
-/* line 127, ../sass/styles.scss */
+/* line 149, ../sass/styles.scss */
 .summary-category {
   margin-bottom: 5em;
 }
 
 /*devices larger than smart phones*/
 @media screen and (min-width: 480px) {
-  /* line 135, ../sass/styles.scss */
+  /* line 157, ../sass/styles.scss */
   .phone-disabled {
     display: block;
   }
 
-  /* line 139, ../sass/styles.scss */
+  /* line 161, ../sass/styles.scss */
   .compare {
     display: inline-block;
   }
 
-  /* line 143, ../sass/styles.scss */
+  /* line 165, ../sass/styles.scss */
   img.compare-item {
     width: 100px;
     background-color: gray;
   }
 
-  /* line 148, ../sass/styles.scss */
+  /* line 170, ../sass/styles.scss */
   .detail-compare-logo {
     width: 200px;
   }

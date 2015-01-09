@@ -1,47 +1,35 @@
-<select class="form-control" ng-model="selectedRole" ng-change="updateRole(selectedRole)">
-    <option value="admin" selected="selected">Admin</option>
+<select class="form-control" ng-model="selectedRole" ng-init="selectedRole = 'admin'">
+    <option value="admin">Admin</option>
     <option value="consumer">Consumer</option>
     <option value="collaborator">Collaborator</option>
     <option value="executive">Executive</option>
+    <option value="broker">Broker Operator</option>
 </select>
 
-<div ng-class="{'hidden' :  role !== 'admin', 'visible' : role === 'admin'}">
+<!-- Executive view section -->
+<div ng-class="{'hidden' :  selectedRole !== 'executive', 'visible' : selectedRole === 'executive'}">
     <div class="row">
-        <h3 class="col-sm-12">Admin</h3>
+        <h3 class="col-sm-12">Executive</h3>
     </div>
     <div class="row">
-        <div class="col-sm-4 text-center">Admin Insight 1</div>
-        <div class="col-sm-4 text-center">Admin Insight 2</div>
-        <div class="col-sm-4 text-center">Admin Insight 3</div>
+        <div class="col-sm-4 text-center">Executive Insight 1</div>
+        <div class="col-sm-4 text-center">Executive Insight 2</div>
+        <div class="col-sm-4 text-center">Executive Insight 3</div>
     </div>
 
     <div class="row">
-        <div class="col-sm-3 text-center">Admin Actions 1</div>
-        <div class="col-sm-3 text-center">Admin Actions 2</div>
-        <div class="col-sm-3 text-center">Admin Actions 3</div>
-        <div class="col-sm-3 text-center">Admin Actions 4</div>
+        <div class="col-sm-3 text-center">Executive Actions 1</div>
+        <div class="col-sm-3 text-center">Executive Actions 2</div>
+        <div class="col-sm-3 text-center">Executive Actions 3</div>
+        <div class="col-sm-3 text-center">Executive Actions 4</div>
     </div>
 </div>
 
-<div ng-class="{'hidden' :  role !== 'consumer', 'visible' : role === 'consumer'}">
-    <div class="row">
-        <h3 class="col-sm-12">Consumer</h3>
-    </div>
-    <div class="row">
-        <div class="col-sm-4 text-center">Consumer Insight 1</div>
-        <div class="col-sm-4 text-center">Consumer Insight 2</div>
-        <div class="col-sm-4 text-center">Consumer Insight 3</div>
-    </div>
 
-    <div class="row">
-        <div class="col-sm-3 text-center">Consumer Actions 1</div>
-        <div class="col-sm-3 text-center">Consumer Actions 2</div>
-        <div class="col-sm-3 text-center">Consumer Actions 3</div>
-        <div class="col-sm-3 text-center">Consumer Actions 4</div>
-    </div>
-</div>
 
-<div ng-class="{'hidden' :  role !== 'collaborator', 'visible' : role === 'collaborator'}">
+
+<!-- Collaborator view section -->
+<div ng-class="{'hidden' :  selectedRole !== 'collaborator', 'visible' : selectedRole === 'collaborator'}">
     <div class="row">
         <h3 class="col-sm-12">Collaborator</h3>
     </div>
@@ -59,9 +47,29 @@
     </div>
 </div>
 
-<div ng-class="{'hidden' :  role !== 'executive', 'visible' : role === 'executive'}">
+<!-- Consumer view section -->
+<div ng-class="{'hidden' :  selectedRole !== 'consumer', 'visible' : selectedRole === 'consumer'}">
     <div class="row">
-        <h3 class="col-sm-12">Executive</h3>
+        <h3 class="col-sm-12">Consumer</h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 text-center">Consumer Insight 1</div>
+        <div class="col-sm-4 text-center">Consumer Insight 2</div>
+        <div class="col-sm-4 text-center">Consumer Insight 3</div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3 text-center">Consumer Actions 1</div>
+        <div class="col-sm-3 text-center">Consumer Actions 2</div>
+        <div class="col-sm-3 text-center">Consumer Actions 3</div>
+        <div class="col-sm-3 text-center">Consumer Actions 4</div>
+    </div>
+</div>
+
+<!-- Executive view section -->
+<div ng-class="{'hidden' :  selectedRole !== 'broker', 'visible' : selectedRole === 'broker'}">
+    <div class="row">
+        <h3 class="col-sm-12">Broker Operator</h3>
     </div>
     <div class="row">
         <div class="col-sm-4 text-center">Executive Insight 1</div>
@@ -70,9 +78,83 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-3 text-center">Executive Actions 1</div>
-        <div class="col-sm-3 text-center">Executive Actions 2</div>
+        <div class="col-sm-3 text-center">Operate Fullfilment Center - delegator</div>
+        <div class="col-sm-3 text-center">Operate Marketplace</div>
         <div class="col-sm-3 text-center">Executive Actions 3</div>
         <div class="col-sm-3 text-center">Executive Actions 4</div>
     </div>
 </div>
+
+
+
+<!-- Admin view section -->
+<div ng-class="{'hidden' :  selectedRole !== 'admin', 'visible' : selectedRole === 'admin'}">
+    <div class="row">
+        <div class="col-sm-12">
+            <div><h4><a href="#setup">Getting Started</a></h4><div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-alert">Alerts/News Feed<div>
+        </div>
+    </div>
+        
+    <div class="row">
+        <div class="col-sm-12 col-md-4 text-center">
+            <div><h3>Most Used Services</h3></div>
+            <div><img class="dashboard-chart" src="img/flat-chart.jpg"></div>
+        </div>
+        <div class="col-sm-12 col-md-4 text-center">
+            <div><h3>Most Resource Intensive Services</h3></div>
+            <div><img class="dashboard-chart" src="img/flat-chart.jpg"></div>
+        </div>
+        <div class="col-sm-12 col-md-4 text-center">
+            <div><h3>Admin Insight 3<h3></div>
+            <div><img class="dashboard-chart" src="img/flat-chart.jpg"></div>
+        </div>
+    </div>
+
+    <div class="row dashboard-space">
+        <div class="col-sm-12 col-md-3">
+            <h4>Catalog Management</h4>
+            <ul>
+                <li>Add Provider</li>
+                <a href="#/catalog/add-product"><li>Add Services</li></a>
+                <li>Add Managed Services</li>
+                <li>Configure Pricing Rules</li>
+                <li>Catalog Admin View???</li>
+                <li>Provider Accout</li>
+                <li>Automatic Pricing Update</li>
+            </ul>
+        </div>
+
+        <div class="col-sm-12 col-md-3">
+            <h4>Price Management</h4>
+            <ul>
+                <li>Pricing Rules (what about them)</li>
+                <li>Pricing Updates (what about them)</li>
+            </ul>
+        </div>
+
+        <div class="col-sm-12 col-md-3">
+            <h4>Customer Administration</h4>
+        </div>
+        
+        <div class="col-sm-12 col-md-3 text-center">
+            <h4>Provider Account Management</h4>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

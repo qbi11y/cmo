@@ -8,7 +8,7 @@ cmoControllers.controller('HomeController', ['$scope', function($scope) {
 }]);
 
 cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarProducts', 'ManageResponses', 'CompareItems', 'ShoppingCart','ConfigureProduct','NeedsApproval', function ($scope, Products, SimilarProducts, ManageResponses, CompareItems, ShoppingCart, ConfigureProduct, NeedsApproval) {
-    $scope.selectedSection = 'store';
+    $scope.selectedSection;
     $scope.products = Products.getProducts();
     $scope.similarProducts = SimilarProducts;
     $scope.cartResponse = ManageResponses.getResponse('addToCart');
@@ -18,6 +18,10 @@ cmoControllers.controller('ProductController', ['$scope', 'Products', 'SimilarPr
     $scope.selectedView = 'list';
     $scope.approvalItems = NeedsApproval;
     $scope.configureProduct = ConfigureProduct.getConfigureProduct();
+
+    $scope.showConfigure = function(e) {
+        console.log(e.toElement);
+    }
     $scope.setCompare = function (item, checked) {
         if (checked == true) {
             $scope.compare.push(item);
@@ -179,7 +183,6 @@ cmoControllers.controller('CatalogController', ['$scope', 'Products', 'Providers
 
     $scope.edit = function(item) {
         EditProduct.setItem(item);
-        //$scope.item = EditProduct.getItem();
         console.log('item to be edited ', $scope.item)
     }
 }]);

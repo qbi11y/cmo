@@ -164,6 +164,8 @@ app.factory('Products', function() {
     var products = [
     {
         id: 1,
+        storeEnabled: true,
+        solutionEnabled: false,
         name: 'Amazon Web Services',
         type: 'service',
         description: 'Lorem ipsum dolor sit amet, sea id molestie eleifend moderatius, ubique mandamus nec ex. Pro error mentitum ad, pri sonet facilisis voluptatum in, pri voluptua partiendo intellegebat eu.',
@@ -220,6 +222,8 @@ app.factory('Products', function() {
     },
     {
         id: 2,
+        storeEnabled: true,
+        solutionEnabled: false,
         name: 'Azure',
         type: 'vm',
         description: 'Lorem ipsum dolor sit amet, sea id molestie eleifend moderatius, ubique mandamus nec ex. Pro error mentitum ad, pri sonet facilisis voluptatum in, pri voluptua partiendo intellegebat eu.',
@@ -231,6 +235,8 @@ app.factory('Products', function() {
     },
     {
         id: 3,
+        storeEnabled: true,
+        solutionEnabled: false,
         name: 'OpenStack',
         type: 'service',
         description: 'Lorem ipsum dolor sit amet, sea id molestie eleifend moderatius, ubique mandamus nec ex. Pro error mentitum ad, pri sonet facilisis voluptatum in, pri voluptua partiendo intellegebat eu.',
@@ -242,6 +248,8 @@ app.factory('Products', function() {
     },
     {
         id: 4,
+        storeEnabled: true,
+        solutionEnabled: false,
         name: 'HP',
         type: 'service',
         description: 'Lorem ipsum dolor sit amet, sea id molestie eleifend moderatius, ubique mandamus nec ex. Pro error mentitum ad, pri sonet facilisis voluptatum in, pri voluptua partiendo intellegebat eu.',
@@ -253,6 +261,8 @@ app.factory('Products', function() {
     },
     {
         id: 5,
+        storeEnabled: false,
+        solutionEnabled: false,
         name: 'Google',
         type: 'service',
         description: 'Lorem ipsum dolor sit amet, sea id molestie eleifend moderatius, ubique mandamus nec ex. Pro error mentitum ad, pri sonet facilisis voluptatum in, pri voluptua partiendo intellegebat eu.',

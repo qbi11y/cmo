@@ -5,10 +5,32 @@ SASS Variables
 $form-background: gray;
 
 /*-------end variables-------------------*/
+ul {
+    list-style-type: none;
+    padding: 0;
+}
 
+ul li {
+    border-bottom: 1px dotted gray;
+    padding: 1.5em 0;
+}
 
 * {
     box-sizing: border-box;
+}
+
+.dashboard-chart {
+    width: 20em;
+}
+
+.dashboard-space {
+    margin-top: 5em;
+}
+
+.page-alert {
+    border-bottom: 1px dotted gray;
+    height: 40px;
+    margin-top: 3em;
 }
 
 .phone-disabled, .hidden {
