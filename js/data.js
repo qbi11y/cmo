@@ -1,5 +1,93 @@
 var app = angular.module('Data', []);
 
+app.factory('ImportedServices', ['GlobalCatalog', function(GlobalCatalog) {
+    var services = [];
+
+    return {
+        clear: function(populate) {
+            if (populate) {
+                services = GlobalCatalog.getServices()
+            } else {
+                services = [];
+            }
+        },
+        getServices: function() {
+            //console.log('type of ', (services))
+            return services
+        },
+        addServices: function(selectedService) {
+            services.push(selectedService);
+        },
+        removeService: function(serviceToRemove) {            
+            for (var i=0; i < services.length; i++) {
+                if (services[i].id == serviceToRemove ) {
+                    services.splice(i, 1);
+                }
+            }
+        }
+    }
+}]);
+
+//service to take care of services to be imported
+app.factory('GlobalCatalog', function() {
+    //array holding all of the providers
+    var services = {
+        providers: [
+        {
+            id: 1,
+            name: 'Amazon',
+            thumbnail: 'http://res.cloudinary.com/gravitant/image/upload/v1413466761/providers/aws.jpg'
+        },
+        {
+            id: 2,
+            name: 'Microsoft',
+            thumbnail: 'http://res.cloudinary.com/gravitant/image/upload/v1413466762/providers/azure.png'
+        },
+        {
+            id: 3,
+            name: 'Google',
+            thumbnail: 'http://res.cloudinary.com/gravitant/image/upload/v1413466762/providers/google.png'
+        }], 
+
+        services: [
+        {
+            id: 1,
+            name: 'Some Amazon Service Name 1',
+            provider: 1
+        },
+        {
+            id: 2,
+            name: 'Some MS Service Name 1',
+            provider: 2
+        },
+        {
+            id: 3,
+            name: 'Some MS Service Name 2',
+            provider: 2
+        },
+        {
+            id: 4,
+            name: 'Some Amazon Service Name 2',
+            provider: 1
+        },
+        {
+            id: 5,
+            name: 'Some Google Service Name 1',
+            provider: 3
+        }]}
+
+    
+
+    return {
+        getServices: function() {
+            return services.services
+        },
+        getCatalog: function() {
+            return services
+        }
+    }
+})
+
 //service to take care of the products that need to be edited
 app.factory('EditProduct', function() {
     var item = {}

@@ -95,9 +95,9 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row" ng-show="importedServices.getServices().length != 0">
         <div class="col-sm-12">
-            <div class="page-alert">Alerts/News Feed<div>
+            <div class="page-alert">{{ importedServices.getServices().length }} new services have been recently added to the catalog.</div>
         </div>
     </div>
         

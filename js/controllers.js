@@ -1,7 +1,9 @@
 var cmoControllers = angular.module('cmoControllers', ['Data']);
 
-cmoControllers.controller('HomeController', ['$scope', function($scope) {
+cmoControllers.controller('HomeController', ['$scope','ImportedServices', function($scope, ImportedServices) {
     $scope.role = 'admin';
+    $scope.catalogSetup = false;
+    $scope.importedServices = ImportedServices;
     $scope.updateRole = function(role) {
         $scope.role = role;
     }
@@ -157,13 +159,37 @@ cmoControllers.controller('ManageController', ['$scope', 'ManageViews', 'Applica
 
 }]);
 
-cmoControllers.controller('CatalogController', ['$scope', 'Products', 'ProvidersList', 'ManageResponses', 'EditProduct', function ($scope, Products, ProvidersList, ManageResponses, EditProduct) {
+cmoControllers.controller('CatalogController', ['$scope', 'Products', 'ProvidersList', 'ManageResponses', 'EditProduct', 'GlobalCatalog', 'ImportedServices', function ($scope, Products, ProvidersList, ManageResponses, EditProduct, GlobalCatalog, ImportedServices) {
     $scope.items = Products.getProducts();
     $scope.menuCatalog = true;
     $scope.providers = ProvidersList;
     $scope.formData = {};
     $scope.addProductResponse = ManageResponses.getResponse('addProduct');
     $scope.item = EditProduct.getItem();
+    $scope.globalCatalog = GlobalCatalog.getCatalog();
+    $scope.services = ImportedServices.getServices();
+    $scope.test = ImportedServices;
+
+    $scope.clearServices = function(catalog) {
+        console.log('before clear', ImportedServices.getServices());
+        if (catalog == 'entire') {
+            ImportedServices.clear(true);
+            console.log('after clear', ImportedServices.getServices());
+        } else {
+            ImportedServices.clear();
+            console.log('after clear', ImportedServices.getServices());
+        }
+        
+    }
+
+    $scope.updateServices = function(service, selected) {
+        if (selected) {
+            ImportedServices.addServices(service);
+        } else {
+            ImportedServices.removeService(service.id)
+        }
+        console.log(ImportedServices.getServices());
+    }
 
     $scope.addService = function() {
         console.log($scope.formData);

@@ -1,4 +1,21 @@
 <h1>Getting Started</h1>
-<p>I am thinking a full page wizard that will allow the admin to setup the catalog initially. This should allow them to connect and import the global catalog. It should also allow them to add their own providers and services.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+<form role="form">
+    <div><input type="radio" name="catalog" value="entire" ng-model="catalog" ng-click="clearServices(catalog)"> Import Entire Master Catalog <a href="">more info</a></div>
+    <div><input type="radio" name="catalog" value="partial" ng-model="catalog" ng-click="clearServices(catalog)"> Import Partial Master Catalog <a href="">more info</a></div>
+    <div ng-show="catalog == 'partial'">
+        <div ng-repeat="provider in globalCatalog.providers">
+            <h4>{{ provider.name }}</h4>
+            <div ng-repeat="service in globalCatalog.services" ng-show="provider.id === service.provider">
+                <input type="checkbox" ng-model="selectedService" ng-click="updateServices(service, selectedService)"> {{ service.name }} <a href="">more info</a>
+            </div>
+        </div>
+    </div>
+    <div><input type="radio" name="catalog" value="custom" ng-model="catalog"> Create Custom Catalog <a href="">more info</a></div>
+
+    
+</form> 
+
 <p>What is the information needed to connect to the global catalog? What is the information need to add services and providers?</p>
+<a href="#/setup/loading" class="btn btn-primary btn-block">Next</a>
 <a href="#/" class="btn btn-primary btn-block">Cancel Setup</a>
